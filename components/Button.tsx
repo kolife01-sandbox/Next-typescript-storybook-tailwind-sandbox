@@ -34,15 +34,27 @@ export const Button: React.FC<ButtonProps> = ({
   label,
   ...props
 }) => {
-  const mode = primary ? 'text-red-500' : 'storybook-button--secondary';
-  return (
+  const sizeMode = size === "small" ? "py-1.5 px-4 text-xs"
+  : size === "medium" ? "py-2 px-5 text-sm"
+  : size === "large" ? "py-3 px-6 text-base" : ""
+  return primary ? (
+    <div>
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={`text-white bg-blue-450 rounded-full font-bold ${sizeMode}`}
+      {...props}
+    >
+      {label}
+    </button>
+    </div>
+  ) : (
+    <button
+      type="button"
+      className={['storybook-button', `storybook-button--${size}`, 'storybook-button--primary'].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
       {label}
     </button>
-  );
+  )
 };
