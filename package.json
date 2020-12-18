@@ -8,7 +8,8 @@
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint --ignore-path .gitignore . --ext .ts,.js,tsx,jsx --max-warnings=0"
+    "lint": "eslint --ignore-path .gitignore . --ext .ts,.js,tsx,jsx --max-warnings=0",
+    "lint:fix": "eslint --fix --ignore-path .gitignore . --ext .ts,.js,tsx,jsx"
   },
   "dependencies": {
     "autoprefixer": "^9",
