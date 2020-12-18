@@ -1,5 +1,4 @@
 import React from 'react';
-import './button.css';
 
 export interface ButtonProps {
   /**
@@ -34,6 +33,7 @@ export const Button: React.FC<ButtonProps> = ({
   label,
   ...props
 }) => {
+  const baseButton = "rounded-full font-bold"
   const sizeMode = size === "small" ? "py-1.5 px-4 text-xs"
   : size === "medium" ? "py-2 px-5 text-sm"
   : size === "large" ? "py-3 px-6 text-base" : ""
@@ -41,7 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
     <div>
     <button
       type="button"
-      className={`text-white bg-blue-450 rounded-full font-bold ${sizeMode}`}
+      className={`text-white bg-blue-450 ${baseButton} ${sizeMode}`}
       {...props}
     >
       {label}
@@ -50,8 +50,8 @@ export const Button: React.FC<ButtonProps> = ({
   ) : (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, 'storybook-button--primary'].join(' ')}
-      style={{ backgroundColor }}
+      className={`text-gray-600 bg-transparent shadow-inner ${baseButton} ${sizeMode}`}
+      style={{backgroundColor}}
       {...props}
     >
       {label}
