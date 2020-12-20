@@ -8,19 +8,17 @@
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext .ts,.js,tsx,jsx",
     "lint:fix": "eslint --fix . --ext .ts,.js,tsx,jsx",
     "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn type-check"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx)": [
+    "*.{js,jsx,ts,tsx}": [
       "yarn lint",
       "yarn format"
     ]
