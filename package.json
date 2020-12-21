@@ -10,8 +10,8 @@
     "build:next": "next build",
     "build:build-storybook": "build-storybook",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.js,tsx,jsx",
-    "lint:fix": "eslint --fix . --ext .ts,.js,tsx,jsx",
+    "lint": "eslint . --ext .ts,.js,.tsx,.jsx",
+    "lint:fix": "eslint --fix . --ext .ts,.js,.tsx,.jsx",
     "format": "prettier --write ."
   },
   "husky": {
